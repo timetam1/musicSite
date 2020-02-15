@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <%= render "shared/header" %>
+      </div>
+    <!--  <div id = "content">
+        <%= yield %>
+      </div>
+      <div id = "sidebar">
+        <%= render "shared/sidebar"%>
+      </div>
+      -->
+    </div>
+    <p><%= yield %></p>
+    p><%= yield %></p>
+    p><%= yield %></p>
+    
+  </body>
+</html>
