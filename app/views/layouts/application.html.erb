@@ -13,17 +13,19 @@
       <div id="header">
         <%= render "shared/header" %>
       </div>
-    <!--  <div id = "content">
+
+      <div id = "content">
+        <% if flash.notice %>
+        <p class="notice"><%= flash.notice %></p>
+        <% end %>
         <%= yield %>
-      </div>
+      </div>　
+
       <div id = "sidebar">
         <%= render "shared/sidebar"%>
       </div>
-      -->
+
     </div>
-    <p><%= yield %></p>
-    p><%= yield %></p>
-    p><%= yield %></p>
-    
+    <!-- <p><%= yield %></p> -->
   </body>
 </html>

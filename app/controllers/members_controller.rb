@@ -14,8 +14,8 @@ class MembersController < ApplicationController
 
   end
 
+  #　会員の新規登録
   def create
-
   end
 
   def update

@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   root "top#index"
   get "lesson/:action(/:name)" => "lesson"
 
-  resources :members
+  # resources :members
+  resources :users do
+    collection { get "search" }
+  end
 end
