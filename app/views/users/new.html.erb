@@ -2,7 +2,7 @@
 
 <h1><%= @page_title %></h1>
 
-<% form_for @user do |form| %>
+<%= form_for @user do |form| %>
 <%= render "form", form: form %>
 <p><%= form.submit %></p>
 <% end %>

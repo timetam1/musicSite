@@ -1,0 +1,15 @@
+<!-- <%= form_for @user do |form| %> -->
+
+<table class="attr" >
+  <tr>
+    <th><%= form.label :number, "背番号" %></th>
+    <td><%= form.text_field :number, size: 8 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :name, "ユーザー名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+</table>
+
+
+<!--  <% end %> -->
