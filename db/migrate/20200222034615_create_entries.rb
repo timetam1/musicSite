@@ -9,6 +9,5 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
     add_index :entries, :user_id
-    add_foreign_key :entries. :users
   end
 end

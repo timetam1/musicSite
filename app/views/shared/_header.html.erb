@@ -1,3 +1,11 @@
+<% if current_user %>
+<p>
+  <%= current_user.name %> |
+  <%= link_to "ログアウト", :session,
+  method: :delete, data: { confirm: "ログアウトしますか?"} %>
+</p>
+<% end %>
+
 <div class="menubar">
 <%= link_to "TOP", root_path  %>
 <%= link_to "メニュー", "#" %>

@@ -28,7 +28,7 @@ end
   # 新規作成
   def create
     @entry = Entry.new(entry_params)
-    @entry.author = User.new
+    @entry.author = current_user
     if @entry.save
       redirect_to @entry, notice: "記事を作成しました"
     else
