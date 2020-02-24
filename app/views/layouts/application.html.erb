@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title><%= page_title %></title>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %><!-- クロスサイトリクエストフォージェリ対策 -->
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,19 +13,13 @@
       <div id="header">
         <%= render "shared/header" %>
       </div>
-
       <div id = "content">
-        <% if flash.notice %>
-        <p class="notice"><%= flash.notice %></p>
-        <% end %>
+        <p><%= flash.notice %></p>
         <%= yield %>
       </div>　
-
       <div id = "sidebar">
         <%= render "shared/sidebar"%>
       </div>
-
     </div>
-    <!-- <p><%= yield %></p> -->
   </body>
 </html>

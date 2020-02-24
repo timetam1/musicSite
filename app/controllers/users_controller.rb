@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
   # 会員一覧
   def index
-    @users = User.order("number")
+    @users = User.order("id")
   end
 
   def search
     @users = User.search(params[:q])
     render "index"
   end
+  
   def show
     @user = User.find(params[:id])
   end
 
+  # 新規登録
   def new
     @user = User.new()
   end
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
   # 会員情報の更新
   def update
     @user = User.find(params[:id])
-    @user.assign_attrubutes(params[:user])
+    @user.assign_attributes(params[:user])
     if @user.save
       redirect_to @user, notice: "会員情報を更新しました"
     else
@@ -44,6 +46,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to :user, notice: "会員を削除しました"
+    redirect_to :users, notice: "会員を削除しました"
   end
 end

@@ -1,15 +1,23 @@
-<!-- <%= form_for @user do |form| %> -->
-
-<table class="attr" >
+<%= render "shared/errors", obj: @user %>
+<table>
   <tr>
-    <th><%= form.label :number, "背番号" %></th>
-    <td><%= form.text_field :number, size: 8 %></td>
+    <th>番号</th>
+    <td><%= formData.text_field :number %></td>
   </tr>
   <tr>
-    <th><%= form.label :name, "ユーザー名" %></th>
-    <td><%= form.text_field :name %></td>
+    <th>名前</th>
+    <td><%= formData.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= formData.label :password %></th>
+    <td><%= formData.password_field :password %></td>
+  </tr>
+  <tr>
+    <th><%= formData.label :password_confirmation %></th>
+    <td><%= formData.password_field :password_confirmation %></td>
   </tr>
 </table>
 
-
-<!--  <% end %> -->
+<% unless @user.new_record? %>
+<p>パスワードを変更しない時は、パスワード入力する欄を空にしてください</p>
+<% end %>

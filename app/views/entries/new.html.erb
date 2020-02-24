@@ -1,0 +1,6 @@
+<h1>ブログ記事の新規作成</h1>
+
+<%= form_for @entry do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>
