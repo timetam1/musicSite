@@ -8,6 +8,6 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.string :status, null: false, default: "draft"
       t.timestamps null: false
     end
-    add_index :entries, :user_id
+    # add_index :entries, :user_id
   end
 end

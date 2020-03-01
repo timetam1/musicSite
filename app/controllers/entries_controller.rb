@@ -27,8 +27,9 @@ end
 
   # 新規作成
   def create
-    @entry = Entry.new(entry_params)
-    @entry.author = current_user
+    # @entry = Entry.new(entry_params)
+    @entry = Entry.new(params[:id])
+    # @entry.author = current_user
     if @entry.save
       redirect_to @entry, notice: "記事を作成しました"
     else
@@ -53,9 +54,9 @@ end
     redirect_to :entries, notice: "記事を削除しました"
   end
 
-  private
-  def entry_params
-    params.required(:entry).permit(:title, :body, :posted_at, :status)
-  end
+  # private
+  # def entry_params
+  #  params.required(:entry).permit(:title, :body, :posted_at, :status)
+  # end
 
 end

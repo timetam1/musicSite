@@ -24,7 +24,8 @@ class UsersController < ApplicationController
 
   # 会員の新規登録
   def create
-    @user = User.new(user_params)
+  #  @user = User.new(user_params)
+  @user = User.new(params[:user])
     if @user.save
       redirect_to @user, notice: "会員を登録しました"
     else
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
   private
   def user_params
     attrs = [:number, :name]
-    attrs << :administrator if current_user.administrator?params.required(:user).permit(attrs)
+    # attrs << :administrator if current_user.administrator?params.required(:user).permit(attrs)
   end
 
 end
